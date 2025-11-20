@@ -2,7 +2,12 @@
 
 #define DEFAULT_TASK_COUNTER 16
 
-typedef void (*taskFunction)(void *);
+typedef enum {
+    TASK_DONE,
+    TASK_CONTINUE,
+} TaskStatus;
+
+typedef TaskStatus (*taskFunction)(void *);
 
 typedef struct {
     taskFunction function;
