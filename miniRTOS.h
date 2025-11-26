@@ -3,8 +3,10 @@
 #define DEFAULT_TASK_COUNTER 16
 
 typedef enum {
-    TASK_DONE,
-    TASK_CONTINUE,
+    TASK_NEW,
+    TASK_AWAITING,
+    TASK_RUNNING
+    TASK_TERMINATED,
 } TaskStatus;
 
 typedef TaskStatus (*taskFunction)(void *);
